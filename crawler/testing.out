@@ -1,0 +1,23 @@
+(cd libcs50 && if [ -r set.c ]; then make libcs50.a; else cp libcs50-given.a libcs50.a; fi)
+make -C common
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make -C crawler
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+# make -C indexer
+# make -C querier
+./crawler/testing.sh
+1) Bad Arguments Tests
+Usage: crawler/crawler seedURL pageDirectory maxDepth
+Usage: crawler/crawler seedURL pageDirectory maxDepth
+Error: seedURL must be an internal URL
+Error: maxDepth must be greater than 0 and less than 10
+Error: maxDepth must be greater than 0 and less than 10
+2) Letters Depths 0,1,2
+3) Letters with Different Seeds
+4) Toscrape Depths 0, 1
+5) Letters Depth 3
+done
