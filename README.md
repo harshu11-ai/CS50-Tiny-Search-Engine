@@ -3,7 +3,7 @@
 # Tiny Search Engine (TSE)
 
 **Author:** Harshith Yallampalli  
-**Created for:** Harvard CS50
+**Created for:** Dartmouth CS50
 
 This project was created for my CS50 class as part of the Tiny Search Engine (TSE) assignment. The TSE is a multi-module system that implements a simplified web search engine, similar to how programs like Google crawl, index, and search the web.
 
