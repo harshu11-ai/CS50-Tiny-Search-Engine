@@ -1,0 +1,281 @@
+(cd libcs50 && if [ -r set.c ]; then make libcs50.a; else cp libcs50-given.a libcs50.a; fi)
+make -C common
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make -C crawler
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+make -C indexer
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/indexer'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/indexer'
+make -C querier
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/querier'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/querier'
+./querier/testing.sh
+1) querier - invalid arguments
+Usage: ./querier/querier pageDirectory indexFilename
+Usage: ./querier/querier pageDirectory indexFilename
+Usage: ./querier/querier pageDirectory indexFilename
+1.1) querier - invalid pageDirectory
+Error: 'data/nonexistent' is not a crawler directory
+Error: '.' is not a crawler directory
+1.2) querier - invalid indexFile
+Error: cannot load index from data/nonexistent-index.out
+Error: cannot load index from data/readonly-q.out
+2) querier - uninteresting / invalid queries
+Query? Query? Query? Query: test!
+Query? Query: and test
+Error: and cannot be first
+Query? Query: test or
+Error: or cannot be last
+Query? Query: and or
+Error: and cannot be first
+Query? Query: test and and test
+Error: and and and cannot be adjacent
+Query? 3) querier - simple valid queries
+Query? Query: religion
+score 4 doc 259: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/religion_12/index.html
+score 1 doc 1: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+score 1 doc 2: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-2.html
+score 1 doc 3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-3.html
+score 1 doc 4: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-1.html
+score 1 doc 5: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/you-cant-bury-them-all-poems_961/index.html
+score 1 doc 45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/crime_51/index.html
+score 1 doc 47: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/erotica_50/index.html
+score 1 doc 48: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/cultural_49/index.html
+score 1 doc 49: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/politics_48/index.html
+score 1 doc 50: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/health_47/index.html
+score 1 doc 53: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/novels_46/index.html
+score 1 doc 54: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/short-stories_45/index.html
+score 1 doc 55: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/suspense_44/index.html
+score 1 doc 56: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian_43/index.html
+score 1 doc 57: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical_42/index.html
+score 1 doc 60: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/self-help_41/index.html
+score 1 doc 61: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/academic_40/index.html
+score 1 doc 62: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/spirituality_39/index.html
+score 1 doc 68: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/contemporary_38/index.html
+score 1 doc 69: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/thriller_37/index.html
+score 1 doc 75: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/biography_36/index.html
+score 1 doc 76: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score 1 doc 87: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian-fiction_34/index.html
+score 1 doc 88: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+score 1 doc 89: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/page-2.html
+score 1 doc 108: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/history_32/index.html
+score 1 doc 119: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/horror_31/index.html
+score 1 doc 132: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/humor_30/index.html
+score 1 doc 137: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/adult-fiction_29/index.html
+score 1 doc 138: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/parenting_28/index.html
+score 1 doc 139: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+score 1 doc 145: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+score 1 doc 147: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/art_25/index.html
+score 1 doc 149: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/paranormal_24/index.html
+score 1 doc 150: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/poetry_23/index.html
+score 1 doc 158: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+score 1 doc 167: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/index.html
+score 1 doc 168: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/page-2.html
+score 1 doc 180: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/new-adult_20/index.html
+score 1 doc 181: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/index.html
+score 1 doc 182: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/page-2.html
+score 1 doc 202: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/index.html
+score 1 doc 203: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/page-2.html
+score 1 doc 218: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sports-and-games_17/index.html
+score 1 doc 219: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science-fiction_16/index.html
+score 1 doc 224: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/dune-dune-1_151/index.html
+score 1 doc 235: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+score 1 doc 236: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/page-2.html
+score 1 doc 244: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/music_14/index.html
+score 1 doc 249: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/index.html
+score 1 doc 250: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/page-2.html
+score 1 doc 260: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/dont-be-a-jerk-and-other-practical-advice-from-dogen-japans-greatest-zen-master_890/index.html
+score 1 doc 261: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/index.html
+score 1 doc 262: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/page-2.html
+score 1 doc 274: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/index.html
+score 1 doc 275: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/page-2.html
+score 1 doc 286: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/womens-fiction_9/index.html
+score 1 doc 301: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/index.html
+score 1 doc 302: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/page-2.html
+score 1 doc 315: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/philosophy_7/index.html
+score 1 doc 320: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/classics_6/index.html
+score 1 doc 334: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/index.html
+score 1 doc 335: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/page-2.html
+score 1 doc 347: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/index.html
+score 1 doc 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/page-2.html
+score 1 doc 364: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/index.html
+score 1 doc 365: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/page-2.html
+score 1 doc 377: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+score 1 doc 382: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+score 1 doc 383: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/page-2.html
+score 1 doc 384: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Query? Query: history
+score 4 doc 108: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/history_32/index.html
+score 3 doc 113: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/1491-new-revelations-of-the-americas-before-columbus_650/index.html
+score 3 doc 114: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-distant-mirror-the-calamitous-14th-century_652/index.html
+score 1 doc 1: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+score 1 doc 2: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-2.html
+score 1 doc 3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-3.html
+score 1 doc 4: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-1.html
+score 1 doc 40: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sapiens-a-brief-history-of-humankind_996/index.html
+score 1 doc 45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/crime_51/index.html
+score 1 doc 47: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/erotica_50/index.html
+score 1 doc 48: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/cultural_49/index.html
+score 1 doc 49: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/politics_48/index.html
+score 1 doc 50: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/health_47/index.html
+score 1 doc 53: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/novels_46/index.html
+score 1 doc 54: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/short-stories_45/index.html
+score 1 doc 55: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/suspense_44/index.html
+score 1 doc 56: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian_43/index.html
+score 1 doc 57: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical_42/index.html
+score 1 doc 60: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/self-help_41/index.html
+score 1 doc 61: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/academic_40/index.html
+score 1 doc 62: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/spirituality_39/index.html
+score 1 doc 68: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/contemporary_38/index.html
+score 1 doc 69: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/thriller_37/index.html
+score 1 doc 75: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/biography_36/index.html
+score 1 doc 76: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score 1 doc 87: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian-fiction_34/index.html
+score 1 doc 88: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+score 1 doc 89: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/page-2.html
+score 1 doc 109: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-rise-and-fall-of-the-third-reich-a-history-of-nazi-germany_454/index.html
+score 1 doc 110: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-short-history-of-nearly-everything_457/index.html
+score 1 doc 111: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/most-blessed-of-the-patriarchs-thomas-jefferson-and-the-empire-of-the-imagination_509/index.html
+score 1 doc 112: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/brilliant-beacons-a-history-of-the-american-lighthouse_515/index.html
+score 1 doc 115: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/zealot-the-life-and-times-of-jesus-of-nazareth_785/index.html
+score 1 doc 116: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/thomas-jefferson-and-the-tripoli-pirates-the-forgotten-war-that-changed-american-history_867/index.html
+score 1 doc 117: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/political-suicide-missteps-peccadilloes-bad-calls-backroom-hijinx-sordid-pasts-rotten-breaks-and-just-plain-dumb-mistakes-in-the-annals-of-american-politics_917/index.html
+score 1 doc 118: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-age-of-genius-the-seventeenth-century-and-the-birth-of-the-modern-mind_929/index.html
+score 1 doc 119: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/horror_31/index.html
+score 1 doc 132: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/humor_30/index.html
+score 1 doc 137: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/adult-fiction_29/index.html
+score 1 doc 138: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/parenting_28/index.html
+score 1 doc 139: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+score 1 doc 145: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+score 1 doc 147: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/art_25/index.html
+score 1 doc 149: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/paranormal_24/index.html
+score 1 doc 150: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/poetry_23/index.html
+score 1 doc 158: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+score 1 doc 167: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/index.html
+score 1 doc 168: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/page-2.html
+score 1 doc 180: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/new-adult_20/index.html
+score 1 doc 181: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/index.html
+score 1 doc 182: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/page-2.html
+score 1 doc 202: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/index.html
+score 1 doc 203: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/page-2.html
+score 1 doc 212: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/modern-romance_820/index.html
+score 1 doc 218: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sports-and-games_17/index.html
+score 1 doc 219: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science-fiction_16/index.html
+score 1 doc 235: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+score 1 doc 236: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/page-2.html
+score 1 doc 244: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/music_14/index.html
+score 1 doc 249: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/index.html
+score 1 doc 250: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/page-2.html
+score 1 doc 259: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/religion_12/index.html
+score 1 doc 261: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/index.html
+score 1 doc 262: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/page-2.html
+score 1 doc 274: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/index.html
+score 1 doc 275: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/page-2.html
+score 1 doc 286: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/womens-fiction_9/index.html
+score 1 doc 301: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/index.html
+score 1 doc 302: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/page-2.html
+score 1 doc 315: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/philosophy_7/index.html
+score 1 doc 320: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/classics_6/index.html
+score 1 doc 334: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/index.html
+score 1 doc 335: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/page-2.html
+score 1 doc 347: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/index.html
+score 1 doc 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/page-2.html
+score 1 doc 364: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/index.html
+score 1 doc 365: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/page-2.html
+score 1 doc 377: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+score 1 doc 382: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+score 1 doc 383: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/page-2.html
+score 1 doc 384: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Query? Query: religion and history
+score 1 doc 88: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+score 1 doc 145: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+score 1 doc 158: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+Query? Query: religion or history
+score 4 doc 108: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/history_32/index.html
+score 3 doc 113: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/1491-new-revelations-of-the-americas-before-columbus_650/index.html
+score 3 doc 114: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-distant-mirror-the-calamitous-14th-century_652/index.html
+score 1 doc 1: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+score 1 doc 2: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-2.html
+score 1 doc 3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-3.html
+score 1 doc 4: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-1.html
+score 1 doc 40: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sapiens-a-brief-history-of-humankind_996/index.html
+score 1 doc 45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/crime_51/index.html
+score 1 doc 47: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/erotica_50/index.html
+score 1 doc 48: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/cultural_49/index.html
+score 1 doc 49: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/politics_48/index.html
+score 1 doc 50: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/health_47/index.html
+score 1 doc 53: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/novels_46/index.html
+score 1 doc 54: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/short-stories_45/index.html
+score 1 doc 55: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/suspense_44/index.html
+score 1 doc 56: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian_43/index.html
+score 1 doc 57: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical_42/index.html
+score 1 doc 60: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/self-help_41/index.html
+score 1 doc 61: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/academic_40/index.html
+score 1 doc 62: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/spirituality_39/index.html
+score 1 doc 68: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/contemporary_38/index.html
+score 1 doc 69: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/thriller_37/index.html
+score 1 doc 75: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/biography_36/index.html
+score 1 doc 76: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score 1 doc 87: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian-fiction_34/index.html
+score 1 doc 88: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+score 1 doc 89: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/page-2.html
+score 1 doc 109: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-rise-and-fall-of-the-third-reich-a-history-of-nazi-germany_454/index.html
+score 1 doc 110: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-short-history-of-nearly-everything_457/index.html
+score 1 doc 111: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/most-blessed-of-the-patriarchs-thomas-jefferson-and-the-empire-of-the-imagination_509/index.html
+score 1 doc 112: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/brilliant-beacons-a-history-of-the-american-lighthouse_515/index.html
+score 1 doc 115: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/zealot-the-life-and-times-of-jesus-of-nazareth_785/index.html
+score 1 doc 116: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/thomas-jefferson-and-the-tripoli-pirates-the-forgotten-war-that-changed-american-history_867/index.html
+score 1 doc 117: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/political-suicide-missteps-peccadilloes-bad-calls-backroom-hijinx-sordid-pasts-rotten-breaks-and-just-plain-dumb-mistakes-in-the-annals-of-american-politics_917/index.html
+score 1 doc 118: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-age-of-genius-the-seventeenth-century-and-the-birth-of-the-modern-mind_929/index.html
+score 1 doc 119: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/horror_31/index.html
+score 1 doc 132: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/humor_30/index.html
+score 1 doc 137: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/adult-fiction_29/index.html
+score 1 doc 138: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/parenting_28/index.html
+score 1 doc 139: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+score 1 doc 145: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+score 1 doc 147: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/art_25/index.html
+score 1 doc 149: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/paranormal_24/index.html
+score 1 doc 150: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/poetry_23/index.html
+score 1 doc 158: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+score 1 doc 167: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/index.html
+score 1 doc 168: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/page-2.html
+score 1 doc 180: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/new-adult_20/index.html
+score 1 doc 181: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/index.html
+score 1 doc 182: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/page-2.html
+score 1 doc 202: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/index.html
+score 1 doc 203: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/page-2.html
+score 1 doc 212: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/modern-romance_820/index.html
+score 1 doc 218: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sports-and-games_17/index.html
+score 1 doc 219: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science-fiction_16/index.html
+score 1 doc 235: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+score 1 doc 236: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/page-2.html
+score 1 doc 244: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/music_14/index.html
+score 1 doc 249: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/index.html
+score 1 doc 250: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/page-2.html
+score 1 doc 259: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/religion_12/index.html
+score 1 doc 261: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/index.html
+score 1 doc 262: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/page-2.html
+score 1 doc 274: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/index.html
+score 1 doc 275: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/page-2.html
+score 1 doc 286: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/womens-fiction_9/index.html
+score 1 doc 301: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/index.html
+score 1 doc 302: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/page-2.html
+score 1 doc 315: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/philosophy_7/index.html
+score 1 doc 320: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/classics_6/index.html
+score 1 doc 334: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/index.html
+score 1 doc 335: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/page-2.html
+score 1 doc 347: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/index.html
+score 1 doc 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/page-2.html
+score 1 doc 364: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/index.html
+score 1 doc 365: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/page-2.html
+score 1 doc 377: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+score 1 doc 382: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+score 1 doc 383: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/page-2.html
+score 1 doc 384: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Query? querier testing complete.

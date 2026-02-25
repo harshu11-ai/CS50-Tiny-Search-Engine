@@ -1,0 +1,23 @@
+(cd libcs50 && if [ -r set.c ]; then make libcs50.a; else cp libcs50-given.a libcs50.a; fi)
+make -C common
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/common'
+make -C crawler
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/crawler'
+make -C indexer
+make[1]: Entering directory '/home/w26f006bqt/tse-harshu11-ai/indexer'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/w26f006bqt/tse-harshu11-ai/indexer'
+# make -C querier
+./indexer/testing.sh
+1) Indexer - invalid arguments
+Usage: ./indexer/indexer pageDirectory indexFilename
+Usage: ./indexer/indexer pageDirectory indexFilename
+Usage: ./indexer/indexer pageDirectory indexFilename
+2) Indexer - invalid pageDirectory (non-existent)
+3) Indexer - invalid indexFile
+4) Integration: indexer + indextest + diff
+All tests passed

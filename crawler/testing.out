@@ -18,6 +18,6 @@ Error: maxDepth must be greater than 0 and less than 10
 Error: maxDepth must be greater than 0 and less than 10
 2) Letters Depths 0,1,2
 3) Letters with Different Seeds
-4) Toscrape Depths 0, 1
+4) Toscrape Depths 0, 1, 2
 5) Letters Depth 3
 done

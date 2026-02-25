@@ -87,6 +87,7 @@ static void crawl(char *seedUrl, char *pageDirectory, int maxDepth)
         }
         webpage_delete(page);
     }
+
     // delete the bag and hashtable
     bag_delete(bag, NULL);
     hashtable_delete(hashtable, NULL);
