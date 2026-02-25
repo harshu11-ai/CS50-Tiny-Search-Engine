@@ -1,11 +1,45 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/64UnCnx-)
-# CS 50 TSE
-Harshith Yallampalli
+# CS50 Tiny Search Engine (TSE)
 
-Add here any assumptions you made while writing the crawler, any ways in which your implementation differs from the three Specs, or any ways in which you know your implementation fails to work.
+This repository is for my **CS50 search engine assignment**.  
+The project builds a small search engine in C with three main parts: a crawler, an indexer, and a querier.
 
-When performing the test, must run make test &> crawler/testing.out
+## Assignment Specs (Summary)
 
-Testing for toscrape depth 2 is not included in the testing since it takes too long to accurately observe its performance. 
+1. **Crawler**
+- Crawls pages starting from a seed URL.
+- Follows only internal links.
+- Respects the max crawl depth.
+- Saves fetched pages in a page directory.
 
-There is a memory leak "still reachable: 7,215 bytes in 16 blocks" that is present. No alterations to my written code have fixed this error so far. 
+2. **Indexer**
+- Reads saved pages from the crawler output.
+- Parses and normalizes words.
+- Builds an inverted index mapping words to document IDs and counts.
+- Writes the index to a file.
+
+3. **Querier**
+- Loads the index and page directory.
+- Accepts queries from standard input.
+- Supports `and` / `or` query logic.
+- Ranks and prints matching documents by score.
+
+## Assumptions / Notes
+
+- The crawler seed URL is assumed to be valid and internal to the CS50 site being crawled.
+- `maxDepth` is assumed to be within the allowed range (`0` to `10`).
+- The indexer ignores words shorter than 3 characters when building the index.
+- Queries are assumed to be space-separated words using `and` / `or` operators, and are expected in lowercase.
+- Query input is assumed to stay within the tokenizer limit (up to 100 tokens per query line).
+- Testing for `toscrape` depth 2 is not included in regular tests because it takes too long to run.
+- A known Valgrind report remains: `still reachable: 7,215 bytes in 16 blocks`.
+
+## Build and Test
+
+- Build all components:
+```bash
+make
+```
+- Run component tests:
+```bash
+make test
+```
